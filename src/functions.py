@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 
-def results() -> dict:
+def results():
     # app = firebase_admin.initialize_app()
     # db = firestore.client()
 

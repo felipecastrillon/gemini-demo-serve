@@ -3,7 +3,8 @@ from functions import *
 
 
 @functions_framework.http
-def main(request) -> dict:
+def main(request):
     print("test event")
     output = results()
-    return output
+    print(output.values())
+    return output.values()
