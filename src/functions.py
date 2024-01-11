@@ -1,9 +1,17 @@
 import firebase_admin
-from firebase_admin import firestore
+from firebase_admin import credentials, firestore
 
 
 def results():
-    app = firebase_admin.initialize_app()
+    # app = firebase_admin.initialize_app()
+    # db = firestore.client()
+
+    cred = credentials.ApplicationDefault()
+    try:
+        firebase_admin.get_app()
+    except ValueError:
+        firebase_admin.initialize_app(cred)
+
     db = firestore.client()
 
     # users_ref = db.collection("users")
