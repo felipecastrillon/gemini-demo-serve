@@ -29,4 +29,4 @@ def results():
 
     outputDict["data"] = outputArray
 
-    return results
+    return outputDict
