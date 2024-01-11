@@ -6,5 +6,5 @@ from functions import *
 def main(request):
     print("test event")
     output = results()
-    print(output.values())
-    return output.values()
+
+    return output
