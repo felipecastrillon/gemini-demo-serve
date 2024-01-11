@@ -23,4 +23,4 @@ def main(request):
     print("test event")
     output = results()
 
-    return output
+    return (output, 200, headers)
