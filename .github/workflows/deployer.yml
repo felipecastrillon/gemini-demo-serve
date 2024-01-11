@@ -61,4 +61,5 @@ jobs:
           "gcloud  functions deploy gemini-example-serve --region=us-central1 \
           --runtime=python39 --gen2 --entry-point=main \
           --trigger-http \
+          --[no-]allow-unauthenticated \
           --source=gs://gemini-cloud-function-serve-source/src.zip"
