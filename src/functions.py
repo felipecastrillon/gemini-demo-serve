@@ -22,11 +22,11 @@ def results():
     results = query.stream()
 
     outputArray = []
-    results = {}
+    outputDict = {}
 
     for doc in results:
         outputArray.append(doc.to_dict())
 
-    results["data"] = outputArray
+    outputDict["data"] = outputArray
 
     return results
