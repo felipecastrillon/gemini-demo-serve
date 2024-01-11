@@ -6,8 +6,11 @@ def results():
     # app = firebase_admin.initialize_app()
     # db = firestore.client()
 
-    app_options = {'projectId': 'cf-data-analytics'}
-    default_app = firebase_admin.initialize_app(options=app_options)
+    if not firebase_admin._apps:
+        firebase_admin.initialize_app()
+
+    # app_options = {'projectId': 'cf-data-analytics'}
+    # default_app = firebase_admin.initialize_app(options=app_options)
 
     db = firestore.client()
 
