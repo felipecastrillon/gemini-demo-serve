@@ -21,7 +21,12 @@ def results():
         "timeStamp", direction=firestore.Query.DESCENDING).limit(3)
     results = query.stream()
 
+    outputArray = []
+    results = {}
+
     for doc in results:
-        print(f"{doc.id} => {doc.to_dict()}")
+        outputArray.append(doc.to_dict())
+
+    results["data"] = outputArray
 
     return results
