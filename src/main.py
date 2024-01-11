@@ -2,7 +2,7 @@ import functions_framework
 from functions import *
 
 
-@functions_framework.cloud_event
-def main(cloud_event):
+@functions_framework.http
+def main(request):
     print("test event")
     results()
