@@ -6,11 +6,8 @@ def results():
     # app = firebase_admin.initialize_app()
     # db = firestore.client()
 
-    cred = credentials.ApplicationDefault()
-    try:
-        firebase_admin.get_app()
-    except ValueError:
-        firebase_admin.initialize_app(cred)
+    app_options = {'projectId': 'cf-data-analytics'}
+    default_app = firebase_admin.initialize_app(options=app_options)
 
     db = firestore.client()
 
