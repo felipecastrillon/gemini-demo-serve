@@ -3,7 +3,7 @@ from firebase_admin import firestore
 
 
 def results():
-    app = firebase_admin.initialize_app()
+    # app = firebase_admin.initialize_app()
     db = firestore.client()
 
     # users_ref = db.collection("users")
