@@ -5,4 +5,5 @@ from functions import *
 @functions_framework.http
 def main(request):
     print("test event")
-    results()
+    output = results()
+    return output
