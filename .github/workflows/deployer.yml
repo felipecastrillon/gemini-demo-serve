@@ -62,4 +62,5 @@ jobs:
           --runtime=python39 --gen2 --entry-point=main \
           --trigger-http \
           --allow-unauthenticated \
+          --min-instances=1 \
           --source=gs://gemini-cloud-function-serve-source/src.zip"
