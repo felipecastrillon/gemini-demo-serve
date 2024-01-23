@@ -23,8 +23,10 @@ def main(request):
     request_json = request.get_json(silent=True)
 
     name = request_json["name"]
-    print(name)
 
-    output = results()
+    if name == "value":
+        output = results()
+    else:
+        output = request_json
 
     return (output, 200, headers)
