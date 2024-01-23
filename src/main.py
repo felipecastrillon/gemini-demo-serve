@@ -20,7 +20,7 @@ def main(request):
     # Set CORS headers for the main request
     headers = {"Access-Control-Allow-Origin": "*"}
 
-    print(request.form)
+    print(request.form["type"])
 
     output = results()
 
