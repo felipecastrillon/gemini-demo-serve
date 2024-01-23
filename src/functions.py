@@ -32,7 +32,7 @@ def text_results():
 
     db = firestore.client()
 
-    cities_ref = db.collection("gemini-demo-text-results")
+    cities_ref = db.collection("gemini-demo-text-result")
     query = cities_ref.order_by(
         "timeStamp", direction=firestore.Query.DESCENDING).limit(10)
     results = query.stream()
