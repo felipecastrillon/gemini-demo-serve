@@ -23,9 +23,8 @@ def main(request):
     try:
         flag = request.get_json()
 
-        print(flag["type"])
+        print(flag)
 
-        output = results()
     except Exception as e:
         print(e)
 
