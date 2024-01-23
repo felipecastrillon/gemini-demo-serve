@@ -34,8 +34,7 @@ def text_results():
     db = firestore.client()
 
     results = (db.collection("gemini-demo-text-result")
-               .where(filter=FieldFilter("query", "!=", ""))
-               .order_by("query", direction=firestore.Query.DESCENDING)
+               .where(filter=FieldFilter("timeStamp", "!=", "null"))
                .order_by("timeStamp", direction=firestore.Query.DESCENDING)
                .limit(10)
                .get())
