@@ -22,11 +22,11 @@ def main(request):
 
     request_json = request.get_json(silent=True)
 
-    name = request_json["name"]
+    flag = request_json["flag"]
 
-    if name == "value":
-        output = results()
+    if flag == "text":
+        output = text_results()
     else:
-        output = request_json
+        output = results()
 
     return (output, 200, headers)
