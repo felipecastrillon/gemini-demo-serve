@@ -20,7 +20,7 @@ def main(request):
     # Set CORS headers for the main request
     headers = {"Access-Control-Allow-Origin": "*"}
 
-    content_type = request.headers["content-type"]
+    content_type = request.headers["Content-Type"]
     if content_type == "application/json":
         request_json = request.get_json(silent=True)
         if request_json and "name" in request_json:
