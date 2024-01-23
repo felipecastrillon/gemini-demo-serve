@@ -29,4 +29,5 @@ def main(request):
     except Exception as e:
         print(e)
 
+    output = results()
     return (output, 200, headers)
