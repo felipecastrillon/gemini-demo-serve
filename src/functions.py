@@ -1,5 +1,6 @@
 import firebase_admin
 from firebase_admin import firestore
+from google.cloud.firestore_v1.base_query import FieldFilter
 
 
 def results():
@@ -33,9 +34,9 @@ def text_results():
     db = firestore.client()
 
     cities_ref = db.collection("gemini-demo-text-result")
-    query = cities_ref.order_by(
+    query = cities_ref.where(filter=FieldFilter("query", "!=", "")).order_by(
         "timeStamp", direction=firestore.Query.DESCENDING).limit(10)
-    results = query.stream()
+    results = query.get()
 
     outputArray = []
     outputDict = {}
