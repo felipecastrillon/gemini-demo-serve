@@ -21,7 +21,7 @@ def main(request):
     headers = {"Access-Control-Allow-Origin": "*"}
 
     try:
-        flag = request.form
+        flag = request.get_dict()
 
         print(flag["type"])
 
