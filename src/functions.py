@@ -10,12 +10,10 @@ def results():
 
     db = firestore.client()
 
-    results = (db.collection("gemini-demo-text-result")
-               .where(filter=FieldFilter("query", "!=", ""))
-               .order_by("query", direction=firestore.Query.DESCENDING)
-               .order_by("timeStamp", direction=firestore.Query.DESCENDING)
-               .limit(10)
-               .get())
+    cities_ref = db.collection("gemini-demo-images")
+    query = cities_ref.order_by(
+        "timeStamp", direction=firestore.Query.DESCENDING).limit(3)
+    results = query.stream()
 
     outputArray = []
     outputDict = {}
@@ -37,10 +35,10 @@ def text_results():
 
     results = (db.collection("gemini-demo-text-result")
                .where(filter=FieldFilter("query", "!=", ""))
-               .order_by(
-        "timeStamp", direction=firestore.Query.DESCENDING)
-        .limit(10)
-        .get())
+               .order_by("query", direction=firestore.Query.DESCENDING)
+               .order_by("timeStamp", direction=firestore.Query.DESCENDING)
+               .limit(10)
+               .get())
 
     outputArray = []
     outputDict = {}
