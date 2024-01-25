@@ -12,7 +12,7 @@ def results():
 
     cities_ref = db.collection("gemini-demo-images")
     query = cities_ref.order_by(
-        "timeStamp", direction=firestore.Query.DESCENDING).limit(3)
+        "timeStamp", direction=firestore.Query.DESCENDING).limit(6)
     results = query.stream()
 
     outputArray = []
